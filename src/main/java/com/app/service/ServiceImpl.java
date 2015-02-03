@@ -11,7 +11,7 @@ import javax.persistence.TemporalType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.app.model.Reservation;
+import com.app.model.LaundryReservation;
 
 @Service
 public class ServiceImpl implements AppService{
@@ -20,20 +20,20 @@ public class ServiceImpl implements AppService{
 	EntityManager em;
 	
 	@Transactional
-	public void addReservation(Reservation r) {
+	public void addReservation(LaundryReservation r) {
 
 		
 	}
 
 	@Transactional
-	public Reservation createReservation() {
-		Reservation r = new Reservation();
+	public LaundryReservation createReservation() {
+		LaundryReservation r = new LaundryReservation();
 		em.persist(r);
 		return r;
 	}
 
 	@Transactional
-	public void editReservation(Reservation r) {
+	public void editReservation(LaundryReservation r) {
 		em.merge(r);
 	}
 
@@ -44,25 +44,25 @@ public class ServiceImpl implements AppService{
 	}
 
 	@Transactional
-	public Reservation getReservation(long id) {
+	public LaundryReservation getReservation(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@SuppressWarnings("deprecation")
 	@Transactional
-	public List<Reservation> getReservations(Date date) {
+	public List<LaundryReservation> getReservations(Date date) {
 		// TODO Auto-generated method stub
 		// TODO if list is empty, create it
 		Query jpqlQuery = em.createQuery("FROM Reservation as reservation " + 
 				"WHERE reservation.date LIKE :date")
 				.setParameter("date", date, TemporalType.DATE);
 				
-		List<Reservation> results = jpqlQuery.getResultList();
+		List<LaundryReservation> results = jpqlQuery.getResultList();
         
 		if (results.isEmpty()) {
 			for (int i = 8; i < 21; i++) {
-				Reservation r = new Reservation();
+				LaundryReservation r = new LaundryReservation();
 				results.add(r);
 				r.setDay(date);
 				r.setTime(i);

@@ -3,14 +3,14 @@ package com.app.service;
 import java.util.Date;
 import java.util.List;
 
-import com.app.model.Reservation;
+import com.app.model.LaundryReservation;
 
 public interface AppService {
-	public void addReservation(Reservation r);
-	public Reservation createReservation();
-	public void editReservation(Reservation r);
+	public void addReservation(LaundryReservation r);
+	public LaundryReservation createReservation();
+	public void editReservation(LaundryReservation r);
 	public void removeReservation(long id);
-	public Reservation getReservation(long id);
-	public List<Reservation> getReservations(Date date);
+	public LaundryReservation getReservation(long id);
+	public List<LaundryReservation> getReservations(Date date);
 	
 }

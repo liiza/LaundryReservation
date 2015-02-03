@@ -10,7 +10,8 @@
 2015-02-03T18:44:00.639924+00:00 heroku[api]: Release v6 created by liisa.sailaranta@aalto.fi
 2015-02-03T18:46:20.441889+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=7f724b42-8e61-4d3b-86a8-89ea9e554818 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
 2015-02-03T18:46:21.409120+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=8cc85016-a39a-4838-8c24-7a878422f7c1 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:46:21.632153+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=74ad8100-d218-4538-8853-cde955181363 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
+2015-02-03T18:46:21.632153+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path
+="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=74ad8100-d218-4538-8853-cde955181363 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
 2015-02-03T18:46:26.403477+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=6f033889-d669-4aa7-a605-20aa61119b26 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
 2015-02-03T18:46:26.882252+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=e2bd647c-172d-40d3-9287-b80e10008b8f fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
 2015-02-03T18:46:27.036494+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=9d5d3dc7-a924-4bb2-836e-0e018a1cc24a fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
@@ -20,3 +21,5 @@
 2015-02-03T18:55:06.141870+00:00 heroku[api]: Deploy 8b9d9c4 by liisa.sailaranta@aalto.fi
 2015-02-03T18:55:06.142921+00:00 heroku[api]: Release v8 created by liisa.sailaranta@aalto.fi
 2015-02-03T18:55:58.074793+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=9a036613-b1f4-4cd9-b501-44755ef13051 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
+2015-02-03T19:00:41.180327+00:00 heroku[api]: Deploy 6ab5065 by liisa.sailaranta@aalto.fi
+2015-02-03T19:00:41.180327+00:00 heroku[api]: Release v9 created by liisa.sailaranta@aalto.fi
