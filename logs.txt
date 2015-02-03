@@ -1,25 +1,102 @@
-2015-02-03T18:34:06.056938+00:00 heroku[api]: Release v2 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:34:06.056887+00:00 heroku[api]: Enable Logplex by liisa.sailaranta@aalto.fi
-2015-02-03T18:43:59.499351+00:00 heroku[api]: Set JAVA_OPTS config vars by liisa.sailaranta@aalto.fi
-2015-02-03T18:43:59.499397+00:00 heroku[api]: Release v3 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:44:00.084901+00:00 heroku[api]: Set DATABASE_URL config vars by liisa.sailaranta@aalto.fi
-2015-02-03T18:44:00.085547+00:00 heroku[api]: Release v4 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:44:00.273647+00:00 heroku[api]: Attach HEROKU_POSTGRESQL_JADE resource by liisa.sailaranta@aalto.fi
-2015-02-03T18:44:00.273674+00:00 heroku[api]: Release v5 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:44:00.639924+00:00 heroku[api]: Deploy 81a5b09 by liisa.sailaranta@aalto.fi
-2015-02-03T18:44:00.639924+00:00 heroku[api]: Release v6 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:46:20.441889+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=7f724b42-8e61-4d3b-86a8-89ea9e554818 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:46:21.409120+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=8cc85016-a39a-4838-8c24-7a878422f7c1 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:46:21.632153+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path
-="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=74ad8100-d218-4538-8853-cde955181363 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:46:26.403477+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=6f033889-d669-4aa7-a605-20aa61119b26 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:46:26.882252+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=e2bd647c-172d-40d3-9287-b80e10008b8f fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:46:27.036494+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=thawing-journey-9067.herokuapp.com request_id=9d5d3dc7-a924-4bb2-836e-0e018a1cc24a fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:48:59.239581+00:00 heroku[api]: Release v7 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:48:59.239581+00:00 heroku[api]: Deploy b40a825 by liisa.sailaranta@aalto.fi
-2015-02-03T18:49:24.707389+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=768c8b14-9cf5-4791-91c7-77817af42e67 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T18:55:06.141870+00:00 heroku[api]: Deploy 8b9d9c4 by liisa.sailaranta@aalto.fi
-2015-02-03T18:55:06.142921+00:00 heroku[api]: Release v8 created by liisa.sailaranta@aalto.fi
-2015-02-03T18:55:58.074793+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=9a036613-b1f4-4cd9-b501-44755ef13051 fwd="84.248.90.133" dyno= connect= service= status=503 bytes=
-2015-02-03T19:00:41.180327+00:00 heroku[api]: Deploy 6ab5065 by liisa.sailaranta@aalto.fi
-2015-02-03T19:00:41.180327+00:00 heroku[api]: Release v9 created by liisa.sailaranta@aalto.fi
+2015-02-03T19:55:19.724978+00:00 app[web.1]: 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:578)
+2015-02-03T19:55:19.724980+00:00 app[web.1]: 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+2015-02-03T19:55:19.724981+00:00 app[web.1]: 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:923)
+2015-02-03T19:55:19.724983+00:00 app[web.1]: 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:852)
+2015-02-03T19:55:19.724984+00:00 app[web.1]: 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:882)
+2015-02-03T19:55:19.724986+00:00 app[web.1]: 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:778)
+2015-02-03T19:55:19.724987+00:00 app[web.1]: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+2015-02-03T19:55:19.724988+00:00 app[web.1]: 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+2015-02-03T19:55:19.724990+00:00 app[web.1]: 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+2015-02-03T19:55:19.724992+00:00 app[web.1]: 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+2015-02-03T19:55:19.724993+00:00 app[web.1]: 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+2015-02-03T19:55:19.724999+00:00 app[web.1]: 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+2015-02-03T19:55:19.724996+00:00 app[web.1]: 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+2
+015-02-03T19:55:19.724995+00:00 app[web.1]: 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+2015-02-03T19:55:19.724997+00:00 app[web.1]: 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+2015-02-03T19:55:19.725021+00:00 app[web.1]: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+2015-02-03T19:55:19.725002+00:00 app[web.1]: 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+2015-02-03T19:55:19.725014+00:00 app[web.1]: 	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1004)
+2015-02-03T19:55:19.725016+00:00 app[web.1]: 	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:589)
+2015-02-03T19:55:19.725000+00:00 app[web.1]: 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+2015-02-03T19:55:19.725017+00:00 app[web.1]: 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1653)
+2015-02-03T19:55:19.725019+00:00 app[web.1]: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+2015-02-03T19:55:19.725023+00:00 app[web.1]: 	at java.lang.Thread.run(Thread.java:745)
+2015-02-03T19:55:19.725024+00:00 app[web.1]: 
+2015-02-03T20:09:56.666399+00:00 heroku[api]: Release v11 created by liisa.sailaranta@aalto.fi
+2015-02-03T20:09:56.666399+00:00 heroku[api]: Deploy cab4573 by liisa.sailaranta@aalto.fi
+2015-02-03T20:09:57.311301+00:00 heroku[web.1]: State changed from up to starting
+2015-02-03T20:10:06.575449+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-02-03T20:10:10.827288+00:00 heroku[web.1]: Process exited with status 143
+2015-02-03T20:10:13.645028+00:00 heroku[web.1]: Starting process with command `java -Xss512k -XX:+UseCompressedOops -Dspring.profiles.active=prod -jar target/dependency/webapp-runner.jar --port 42531 target/*.war`
+2015-02-03T20:10:15.561395+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx384m -Djava.rmi.server.useCodebaseOnly=true
+2015-02-03T20:10:15.862478+00:00 app[web.1]: Adding Context / for target/Varaussivu-0.0.1-SNAPSHOT.war
+2015-02-03T20:10:16.287527+00:00 app[web.1]: Feb 03, 2015 8:10:16 PM org.apache.coyote.AbstractProtocol init
+2015-02-03T20:10:16.315878+00:00 app[web.1]: INFO: Using a shared selector for servlet write/read
+2015-02-03T20:10:16.319484+00:00 app[web.1]: Feb 03, 2015 8:10:16 PM org.apache.catalina.core.StandardService startInternal
+2015-02-03T20:10:16.319490+00:00 app[web.1]: INFO: Starting service Tomcat
+2015-02-03T20:10:16.287532+00:00 app[web.1]: INFO: Initializing ProtocolHandler ["http-nio-42531"]
+2015-02-03T20:10:16.315872+00:00 app[web.1]: Feb 03, 2015 8:10:16 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+2015-02-03T20:10:16.320304+00:00 app[web.1]: Feb 03, 2015 8:10:16 PM org.apache.catalina.core.StandardEngine startInternal
+2015-02-03T20:10:16.320308+00:00 app[web.1]: INFO: Starting Servlet Engine: Apache Tomcat/7.0.34
+2015-02-03T20:10:16.790008+00:00 app[web.1]: Feb 03, 2015 8:10:16 PM org.apache.catalina.startup.ContextConfig getDefaultWebXmlFragment
+2015-02-03T20:10:16.790014+00:00 app[web.1]: INFO: No global web.xml found
+2015-02-03T20:10:17.332465+00:00 heroku[web.1]: State changed from starting to up
+2015-02-03T20:10:25.794170+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.786185+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/core_rt is already defined
+2015-02-03T20:10:25.811753+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.811758+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2015-02-03T20:10:25.815043+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.815047+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/functions is already defined
+2015-02-03T20:10:25.816535+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.816538+00:00 app[web.1]: INFO: TLD skipped. URI: http://jakarta.apache.org/taglibs/standard/permittedTaglibs is already defined
+2015-02-03T20:10:25.817512+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.804848+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.794175+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2015-02-03T20:10:25.820282+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.817514+00:00 app[web.1]: INFO: TLD skipped. URI: http://jakarta.apache.org/taglibs/standard/scriptfree is already defined
+2015-02-03T20:10:25.804853+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/fmt_rt is already defined
+2015-02-03T20:10:25.823439+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.809102+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.823444+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/sql is already defined
+2015-02-03T20:10:25.825058+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.828568+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.825061+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/sql is already defined
+2015-02-03T20:10:25.820286+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/sql_rt is already defined
+2015-02-03T20:10:25.832425+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/xml is already defined
+2015-02-03T20:10:25.791010+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/core is already defined
+2015-02-03T20:10:25.828573+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/xml_rt is already defined
+2015-02-03T20:10:25.809106+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jstl/fmt is already defined
+2015-02-03T20:10:25.791005+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.834924+00:00 app[web.1]: INFO: TLD skipped. URI: http://java.sun.com/jsp/jstl/xml is already defined
+2015-02-03T20:10:25.834919+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.832420+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:25.786180+00:00 app[web.1]: Feb 03, 2015 8:10:25 PM org.apache.catalina.startup.TaglibUriRule body
+2015-02-03T20:10:26.226387+00:00 app[web.1]: INFO: FrameworkServlet 'spring': initialization started
+2015-02-03T20:10:26.049552+00:00 app[web.1]: Feb 03, 2015 8:10:26 PM org.apache.catalina.core.ApplicationContext log
+2015-02-03T20:10:26.225667+00:00 app[web.1]: INFO: Initializing Spring FrameworkServlet 'spring'
+2015-02-03T20:10:26.259999+00:00 app[web.1]: Feb 03, 2015 8:10:26 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+2015-02-03T20:10:26.260003+00:00 app[web.1]: INFO: Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Feb 03 20:10:26 UTC 2015]; root of context hierarchy
+2015-02-03T20:10:26.226385+00:00 app[web.1]: Feb 03, 2015 8:10:26 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+2015-02-03T20:10:26.225663+00:00 app[web.1]: Feb 03, 2015 8:10:26 PM org.apache.catalina.core.ApplicationContext log
+2015-02-03T20:10:26.049557+00:00 app[web.1]: INFO: No Spring WebApplicationInitializer types detected on classpath
+2015-02-03T20:10:26.305592+00:00 app[web.1]: INFO: Loading XML bean definitions from class path resource [applicationContext.xml]
+2015-02-03T20:10:26.305587+00:00 app[web.1]: Feb 03, 2015 8:10:26 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+2015-02-03T20:10:26.930702+00:00 app[web.1]: Feb 03, 2015 8:10:26 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+2015-02-03T20:10:26.930706+00:00 app[web.1]: INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@53724350: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,serviceImpl,appController,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,jspViewResolver,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,dbUrl,dataSource,entityManagerFactory,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+2015-02-03T20:10:27.200692+00:00 app[web.1]: Feb 03, 2015 8:10:27 PM org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean createNativeEntityManagerFactory
+2015-02-03T20:10:27.200698+00:00 app[web.1]: INFO: Building JPA container EntityManagerFactory for persistence unit 'dataSource'
+2015-02-03T20:10:27.230765+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2015-02-03T20:10:27.230788+00:00 app[web.1]: SLF4J: Defaulting to no-operation (NOP) logger implementation
+2015-02-03T20:10:27.231230+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2015-02-03T20:10:28.557682+00:00 app[web.1]: Feb 03, 2015 8:10:28 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+2015-02-03T20:10:28.557687+00:00 app[web.1]: INFO: Mapped "{[/{reservationId}],methods=[PUT],params=[],headers=[],consumes=[application/json],produces=[],custom=[]}" onto org.springframework.http.ResponseEntity<java.lang.Void> com.app.controller.AppController.editLink(long,com.app.model.LaundryReservation)
+2015-02-03T20:10:28.558359+00:00 app[web.1]: Feb 03, 2015 8:10:28 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+2015-02-03T20:10:28.558960+00:00 app[web.1]: Feb 03, 2015 8:10:28 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+2015-02-03T20:10:28.558963+00:00 app[web.1]: INFO: Mapped "{[],methods=[POST],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto org.springframework.http.ResponseEntity<com.app.model.LaundryReservation> com.app.controller.AppController.createLink()
+2015-02-03T20:10:28.558361+00:00 app[web.1]: INFO: Mapped "{[/{dateInMilliSeconds}],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto org.springframework.http.ResponseEntity<java.util.List<com.app.model.LaundryReservation>> com.app.controller.AppController.getLinks(long)
+2015-02-03T20:10:29.074442+00:00 app[web.1]: Feb 03, 2015 8:10:29 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+2015-02-03T20:10:29.074449+00:00 app[web.1]: INFO: FrameworkServlet 'spring': initialization completed in 2847 ms
+2015-02-03T20:10:29.091342+00:00 app[web.1]: INFO: Starting ProtocolHandler ["http-nio-42531"]
+2015-02-03T20:10:29.091338+00:00 app[web.1]: Feb 03, 2015 8:10:29 PM org.apache.coyote.AbstractProtocol start
+2015-02-03T20:10:29.256181+00:00 heroku[router]: at=info method=GET path="/" host=thawing-journey-9067.herokuapp.com request_id=2476a239-f4eb-4011-af91-d1274b46f9be fwd="84.248.90.133" dyno=web.1 connect=2ms service=1546ms status=404 bytes=1120

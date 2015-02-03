@@ -54,7 +54,7 @@ public class ServiceImpl implements AppService{
 	public List<LaundryReservation> getReservations(Date date) {
 		// TODO Auto-generated method stub
 		// TODO if list is empty, create it
-		Query jpqlQuery = em.createQuery("FROM Reservation as reservation " + 
+		Query jpqlQuery = em.createQuery("FROM LaundryReservation as reservation " + 
 				"WHERE reservation.date = :date")
 				.setParameter("date", date, TemporalType.DATE);
 				
