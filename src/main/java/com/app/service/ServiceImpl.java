@@ -45,8 +45,8 @@ public class ServiceImpl implements AppService{
 
 	@Transactional
 	public LaundryReservation getReservation(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		LaundryReservation r = em.find(LaundryReservation.class, id);
+		return r;
 	}
 
 	@SuppressWarnings("deprecation")
