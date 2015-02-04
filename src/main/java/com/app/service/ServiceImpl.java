@@ -55,7 +55,7 @@ public class ServiceImpl implements AppService{
 		// TODO Auto-generated method stub
 		// TODO if list is empty, create it
 		Query jpqlQuery = em.createQuery("FROM LaundryReservation as reservation " + 
-				"WHERE reservation.date = :date")
+				"WHERE reservation.date = :date ORDER BY reservation.time")
 				.setParameter("date", date, TemporalType.DATE);
 				
 		List<LaundryReservation> results = jpqlQuery.getResultList();

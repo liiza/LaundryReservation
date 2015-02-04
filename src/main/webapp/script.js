@@ -18,7 +18,7 @@ app.controller("MyController", function($scope, $http) {
 	$scope.toggleReservation = function(reservation) {
 		reservation.reserved = !reservation.reserved;
 		$http.put(app.url+"/"+reservation.id, reservation).success(function() {
-			alert("succes");
+			console.log("succes");
 		});
 	};
 	
