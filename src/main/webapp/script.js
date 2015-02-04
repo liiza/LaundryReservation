@@ -5,7 +5,12 @@ var app = angular.module("myLinkApp", []);
 
 var dayInMilliSeconds = 86400000; 
 
-app.url = 'http://localhost:9080/Varaussivu/Reservations/';
+if (window.location.hostname == "localhost") {
+	app.url = "http://localhost:9080/Varaussivu/Reservations/";
+}
+else {
+	app.url = "http://thawing-journey-9067.herokuapp.com/";
+}
 
 app.controller("MyController", function($scope, $http) {
 	$scope.d = (new Date()).getTime();
