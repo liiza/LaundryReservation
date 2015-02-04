@@ -36,11 +36,11 @@ public class LaundryReservation {
 		this.reserved = reserved;
 	}
 
-	public Date getDay() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDay(Date day) {
+	public void setDate(Date day) {
 		this.date = day;
 	}
 

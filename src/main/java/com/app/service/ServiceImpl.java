@@ -64,12 +64,12 @@ public class ServiceImpl implements AppService{
 			for (int i = 8; i < 21; i++) {
 				LaundryReservation r = new LaundryReservation();
 				results.add(r);
-				r.setDay(date);
+				r.setDate(date);
 				r.setTime(i);
 				em.persist(r);
 			}
 		}
-		return  jpqlQuery.getResultList();
+		return results;
 	}
 
 }
