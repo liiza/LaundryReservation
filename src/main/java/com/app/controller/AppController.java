@@ -38,11 +38,20 @@ public class AppController {
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{reservationId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	ResponseEntity<Void> editLink(@PathVariable long reservationId, @RequestBody LaundryReservation body) {
+	ResponseEntity<Void> reserve(@PathVariable long reservationId, @RequestBody LaundryReservation body) {
 		boolean reserved = body.isReserved();
 		LaundryReservation r = this.service.getReservation(body.getId());
 		r.setReserved(reserved);
 		this.service.editReservation(r);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
+	
+	/*@RequestMapping(method = RequestMethod.PUT, value = "/{reservationId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	ResponseEntity<Void> editReservation(@PathVariable long reservationId, @RequestBody LaundryReservation body) {
+		boolean reserved = body.isReserved();
+		LaundryReservation r = this.service.getReservation(body.getId());
+		r.setReserved(reserved);
+		this.service.editReservation(r);
+		return new ResponseEntity<Void>(HttpStatus.OK);
+	}*/
 }
