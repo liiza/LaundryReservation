@@ -3,7 +3,7 @@
  */
 var app = angular.module("myLinkApp", []);
 
-app.url = 'http://localhost:9080/Varaussivu/Reservations/';
+app.url = 'http://thawing-journey-9067.herokuapp.com/Reservations/';
 
 app.controller("MyController", function($scope, $http) {
 	$scope.link = {};
