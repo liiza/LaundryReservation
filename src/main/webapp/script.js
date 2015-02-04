@@ -9,7 +9,7 @@ if (window.location.hostname == "localhost") {
 	app.url = "http://localhost:9080/Varaussivu/Reservations/";
 }
 else {
-	app.url = "http://thawing-journey-9067.herokuapp.com/Reservations";
+	app.url = "http://thawing-journey-9067.herokuapp.com/Reservations/";
 }
 
 app.controller("MyController", function($scope, $http) {
