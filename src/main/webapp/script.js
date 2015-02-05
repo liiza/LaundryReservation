@@ -14,12 +14,13 @@ else {
 
 app.controller("MyController", function($scope, $http) {
 	$scope.d = (new Date()).getTime();
+	$scope.steps = ["A", "B"];
+	$scope.aApartments = ["1", "2", "3"];
+	$scope.bApartments= ["1", "2", "3", "4"];
 	
 	$scope.toggleReservation = function(reservation) {
 		reservation.reserved = !reservation.reserved;
-		$http.put(app.url+"/"+reservation.id, reservation).success(function() {
-			console.log("succes");
-		});
+		
 	};
 	
 	$scope.nextDate = function () {
@@ -32,6 +33,19 @@ app.controller("MyController", function($scope, $http) {
 		$http.get(url).success(function(data) {
 			$scope.data = data;
 		});
+	};
+	
+	$scope.update = function(user) {
+		for (var i = 0;  i< $scope.data.length; i++) {
+			var reservation = $scope.data[i];
+			if (reservation.reserved) {
+				reservation.step = user.step;
+				reservation.apartmentNumber = user.apartment;
+				$http.put(app.url+reservation.id, reservation).success(function(data) {
+					console.log("succes");
+				});
+			}
+		}
 	};
 	
 	$scope.fetchData();

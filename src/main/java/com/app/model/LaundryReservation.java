@@ -20,6 +20,10 @@ public class LaundryReservation {
 	
 	private long time;
 
+	private String step;
+	
+	private int apartmentNumber;
+	
 	public long getId() {
 		return id;
 	}
@@ -50,6 +54,22 @@ public class LaundryReservation {
 
 	public void setTime(long time) {
 		this.time = time;
+	}
+
+	public String getStep() {
+		return step;
+	}
+
+	public void setStep(String step) {
+		this.step = step;
+	}
+
+	public int getApartmentNumber() {
+		return apartmentNumber;
+	}
+
+	public void setApartmentNumber(int apartmentNumber) {
+		this.apartmentNumber = apartmentNumber;
 	}
 	
 }

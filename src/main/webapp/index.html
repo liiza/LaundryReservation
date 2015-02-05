@@ -33,6 +33,13 @@
 					</td>
 				</tr>
 			</table>
+			<form>
+				<select ng-options="s for s in steps" ng-model="user.step"></select>
+				<select ng-options="a for a in aApartments" ng-if="user.step == 'A'" ng-model="user.apartment"></select>
+				<select ng-options="b for b in bApartments" ng-if="user.step == 'B'" ng-model="user.apartment"></select>
+				<input type="submit" ng-click="update(user)" value="Save" />
+			</form>
+			
 		</div>
 	</div>
 </body>
