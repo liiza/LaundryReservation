@@ -39,10 +39,11 @@ public class AppController {
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{reservationId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<Void> reserve(@PathVariable long reservationId, @RequestBody LaundryReservation body) {
-		boolean reserved = body.isReserved();
+		/*boolean reserved = body.isReserved();
 		LaundryReservation r = this.service.getReservation(body.getId());
 		r.setReserved(reserved);
-		this.service.editReservation(r);
+		r.setApartmentNumber(body.getApartmentNumber());*/
+		this.service.editReservation(body);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
