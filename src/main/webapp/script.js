@@ -19,7 +19,9 @@ app.controller("MyController", function($scope, $http) {
 	$scope.bApartments= ["1", "2", "3", "4"];
 	
 	$scope.toggleReservation = function(reservation) {
-		reservation.reserved = !reservation.reserved;
+		if (!reservation.reserved) {
+			reservation.reserved = "selected";
+		}
 		
 	};
 	
@@ -38,11 +40,12 @@ app.controller("MyController", function($scope, $http) {
 	$scope.update = function(user) {
 		for (var i = 0;  i< $scope.data.length; i++) {
 			var reservation = $scope.data[i];
-			if (reservation.reserved) {
+			if (reservation.reserved == "selected") {
+				reservation.reserved = true;
 				reservation.step = user.step;
 				reservation.apartmentNumber = user.apartment;
 				$http.put(app.url+reservation.id, reservation).success(function(data) {
-					console.log("succes");
+					
 				});
 			}
 		}
