@@ -29,11 +29,19 @@ app.controller("MyController", function($scope, $http) {
 		$scope.d = $scope.d + dayInMilliSeconds;
 		$scope.fetchData();
 	};
+	$scope.previousDate = function () {
+		$scope.d = $scope.d - dayInMilliSeconds;
+		$scope.fetchData();
+	};
 	
 	$scope.fetchData = function() {
 		var url =  app.url + $scope.d;
 		$http.get(url).success(function(data) {
 			$scope.data = data;
+			var date = new Date($scope.d);
+		    $scope.date = {dd:date.getDate(),
+		    		mm : date.getMonth()+1,
+		    		yyyy : date.getFullYear()};
 		});
 	};
 	
@@ -45,7 +53,7 @@ app.controller("MyController", function($scope, $http) {
 				reservation.step = user.step;
 				reservation.apartmentNumber = user.apartment;
 				$http.put(app.url+reservation.id, reservation).success(function(data) {
-					
+				
 				});
 			}
 		}
