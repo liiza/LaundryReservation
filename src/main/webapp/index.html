@@ -53,7 +53,7 @@ table {
 			<table>
 				<tr>
 					<td ng-repeat="r in data" ng-click="toggleReservation(r)">
-						<div ng-if="r.reserved == true" class="reserved cell">{{r.step}} {{r.apartment}}</div>	
+						<div ng-if="r.reserved == true" class="reserved cell">{{r.step}} {{r.apartmentNumber}}</div>	
 						<div ng-if="r.reserved == false" class="free cell"></div>	
 						<div ng-if="r.reserved == 'selected'" class="selected cell"></div>	
 					</td>
