@@ -11,6 +11,33 @@
 	margin: auto;
 	width: 75%;
 }
+.wrapper {
+	position: relative;
+	width: 190px;
+	height: 50px;
+}
+.arrow {
+	width: 30px;
+	height: 30px;
+
+}
+#arrowleft {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#arrowright {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+h2 {
+	position: absolute;
+	left: 50px;
+	top: -5px;
+}
+
+
 
 .cell {
 	width: 30px;
@@ -26,16 +53,18 @@
 .selected {
 	background-color: blue;
 }
-.arrow {
-	width: 30px;
-	height: 30px;
 
-}
+
 table {
 	margin: 5px 0px;
 }
-
-
+h2, h3 {
+	margin-top: 5px;
+	margin-bottom: 3px;
+}
+h3 {
+	margin-left: 5px;
+}
 
 </style>
 </head>
@@ -44,13 +73,20 @@ table {
 
 		<div class="container">
 			<h1>Pyykkituvan varaus</h1>	
-			<h2>
-			{{date.dd}}.{{date.mm}}.{{date.yyyy}}
-			</h2>
-			<img ng-click="previousDate()" id="arrowleft" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png"/>
-			<img ng-click="nextDate()"  id="arrowright" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowright.png"/>
-
+				<div class="wrapper">
+					<h2>
+					{{date.dd}}.{{date.mm}}.{{date.yyyy}}
+					</h2>
+					<img ng-click="previousDate()" id="arrowleft" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png"/>
+					<img ng-click="nextDate()"  id="arrowright" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowright.png"/>
+				</div>
+			<h3>Alkamisaika</h3>
 			<table>
+				<tr>
+					<th ng-repeat="r in data">
+					{{r.time}}
+					</th>
+				<tr>
 				<tr>
 					<td ng-repeat="r in data" ng-click="toggleReservation(r)">
 						<div ng-if="r.reserved == true" class="reserved cell">{{r.step}} {{r.apartmentNumber}}</div>	
@@ -66,6 +102,7 @@ table {
 				<select ng-init="user.apartment = bApartments[0]" ng-options="b for b in bApartments" ng-if="user.step == 'B'" ng-model="user.apartment"></select>
 				<input type="submit" ng-click="update(user)" value="Save" />
 			</form>
+	
 		</div>
 	
 </body>
