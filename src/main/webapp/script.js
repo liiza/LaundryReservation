@@ -13,29 +13,97 @@ else {
 }
 
 app.controller("MyController", function($scope, $http) {
-	$scope.d = (new Date()).getTime();
+	// The selected date
+	$scope.d = new Date();
+	
+	// Apartment information. Need to re-check after getting actual information.
 	$scope.steps = ["A", "B"];
 	$scope.aApartments = ["1", "2", "3"];
-	$scope.bApartments= ["1", "2", "3", "4"];
+	$scope.bApartments = ["1", "2", "3", "4"];
 	
+	$scope.updateMonth = function() {
+		var date = $scope.d;
+		var m = date.getMonth() + 1;
+		var y = date.getFullYear();
+
+		var firstDayOfMonth = new Date(y, m - 1, 1, 1, 0, 0, 0);
+		
+		var weekDayOfFirstDay = firstDayOfMonth.getDay();
+		// Lets start days from monday
+		weekDayOfFirstDay = (weekDayOfFirstDay + 6) % 7;
+		var daysInMonth;
+		// February
+		if (m == 2) {
+			// Leap year.
+			if (y%4 == 0) {
+				if (y%400 == 0) {
+					daysInMonth = 29;
+				}
+				// Except integer multiples of 100 that are not multiples of 400
+				else if (y%100 == 0) {
+					daysInMonth = 28;
+				}
+				else {
+					daysInMonth = 29;
+				}
+			}
+			else {
+				daysInMonth = 28;
+			}
+			
+		}
+		// April, Juni, September, November
+		else if (m == 4 || m == 6 || m == 9 || m == 11) {
+			daysInMonth = 30;
+		}
+		// Januar, March, May, July, August, October, December
+		else {
+			daysInMonth = 31;
+		}
+		var i = 1;
+		var weeks = [];
+		while (i < daysInMonth + 1) {
+			var week = [];
+			// init days to zero
+			for (var k = 0; k < 7; k++) {
+				week[k] = {number : 0, month: 0, year: 0};
+			}
+			for (var j = weekDayOfFirstDay; j < 7 && i < daysInMonth + 1; j++) {
+				week[j] = {number: i, month : m, year : y};
+				i++;
+			}
+			weekDayOfFirstDay = 0;
+			weeks[weeks.length] = week;
+		}
+		$scope.month = weeks;
+
+	};
 	$scope.toggleReservation = function(reservation) {
 		if (!reservation.reserved) {
-			reservation.reserved = "selected";
+			if (reservation.reserved == "selected") {
+				reservation.reserved = false;
+			}
+			else {
+				reservation.reserved = "selected";
+			}
 		}
 		
 	};
-	
-	$scope.nextDate = function () {
-		$scope.d = $scope.d + dayInMilliSeconds;
-		$scope.fetchData();
+	$scope.nextMonth = function () {
+		var month = $scope.d.getMonth();
+		// Increase month by one
+		$scope.d = new Date( $scope.d.getFullYear(), month + 1, 1, 1, 0, 0, 0);
+		$scope.updateMonth();
+
 	};
-	$scope.previousDate = function () {
-		$scope.d = $scope.d - dayInMilliSeconds;
+	
+	$scope.pickDay = function(day) {
+		$scope.d = new Date(day.year, day.month - 1, day.number, 1, 0, 0, 0);
 		$scope.fetchData();
 	};
 	
 	$scope.fetchData = function() {
-		var url =  app.url + $scope.d;
+		var url =  app.url + $scope.d.getTime();
 		$http.get(url).success(function(data) {
 			$scope.data = data;
 			var date = new Date($scope.d);
@@ -58,6 +126,15 @@ app.controller("MyController", function($scope, $http) {
 			}
 		}
 	};
-	
+//	$scope.mobileView= function() {
+//
+//		if (window.innerWidth > 1000) {
+//			return true;
+//		}
+//		else {
+//			return false;
+//		}
+//	};
+	$scope.updateMonth();
 	$scope.fetchData();
 });

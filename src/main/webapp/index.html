@@ -5,7 +5,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
 <script src="script.js"></script>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .container {
 	margin: auto;
@@ -36,7 +36,9 @@ h2 {
 	left: 50px;
 	top: -5px;
 }
-
+.empty {
+	background-color: grey;
+}
 
 
 .cell {
@@ -65,21 +67,33 @@ h2, h3 {
 h3 {
 	margin-left: 5px;
 }
-
+.hidden {
+	display:none;
+}
 </style>
 </head>
 
 <body ng-controller="MyController">
 
 		<div class="container">
-			<h1>Pyykkituvan varaus</h1>	
-				<div class="wrapper">
-					<h2>
-					{{date.dd}}.{{date.mm}}.{{date.yyyy}}
-					</h2>
-					<img ng-click="previousDate()" id="arrowleft" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png"/>
-					<img ng-click="nextDate()"  id="arrowright" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowright.png"/>
-				</div>
+			<h1 ng-click="nextMonth()">Pyykkituvan varaus</h1>	
+<!-- 				<div class="wrapper"> -->
+<!-- 					<h2> -->
+<!-- 					{{date.dd}}.{{date.mm}}.{{date.yyyy}} -->
+<!-- 					</h2> -->
+<!-- 					<img ng-click="previousDate()" id="arrowleft" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png"/> -->
+<!-- 					<img ng-click="nextDate()"  id="arrowright" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowright.png"/> -->
+<!-- 				</div> -->
+			<div>
+				<table>
+					<tr ng-repeat="week in month">
+						<td ng-repeat="day in week">
+							<div ng-if="day.number == 0" class="empty cell"></div>
+							<div ng-if="day.number != 0" class="cell" ng-click="pickDay(day)">{{day.number}}</div>
+						</td>
+					</tr>
+				</table>
+			</div>
 			<h3>Alkamisaika</h3>
 			<table>
 				<tr>
