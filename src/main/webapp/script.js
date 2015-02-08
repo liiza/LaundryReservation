@@ -11,11 +11,15 @@ if (window.location.hostname == "localhost") {
 else {
 	app.url = "http://thawing-journey-9067.herokuapp.com/Reservations/";
 }
+app.months = ["Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu",
+              "Kesakuu", "Heinakuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"];
+
 
 app.controller("MyController", function($scope, $http) {
 	// The selected date
 	$scope.d = new Date();
-
+    
+	$scope.weekDays= ["Ma", "Ti", "Ke", "To", "Pe", "La", "Su"];
 	
 	// Apartment information. Need to re-check after getting actual information.
 	$scope.steps = ["A", "B"];
@@ -81,6 +85,7 @@ app.controller("MyController", function($scope, $http) {
 			weekDayOfFirstDay = 0;
 			weeks[weeks.length] = week;
 		}
+		$scope.monthName = app.months[m - 1];
 		$scope.month = weeks;
 
 	};
@@ -103,6 +108,15 @@ app.controller("MyController", function($scope, $http) {
 		$scope.fetchData();
 
 	};
+	$scope.previousMonth = function () {
+		var month = $scope.d.getMonth();
+		// Increase month by one
+		$scope.d = new Date(Date.UTC( $scope.d.getFullYear(), month - 1, 1, 1, 0, 0, 0));
+		$scope.updateMonth();
+		$scope.fetchData();
+
+	};
+	
 	
 	$scope.pickDay = function(day) {
 		$scope.selectedDay.selected = false;
@@ -136,15 +150,7 @@ app.controller("MyController", function($scope, $http) {
 			}
 		}
 	};
-//	$scope.mobileView= function() {
-//
-//		if (window.innerWidth > 1000) {
-//			return true;
-//		}
-//		else {
-//			return false;
-//		}
-//	};
+
 	$scope.updateMonth();
 	$scope.fetchData();
 });
