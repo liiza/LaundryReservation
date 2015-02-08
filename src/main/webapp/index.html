@@ -76,8 +76,8 @@ table#calender td {
 					</tr>
 					<tr ng-repeat="week in month">
 						<td ng-repeat="day in week">
-							<div ng-if="day.number == 0" class="empty cell"></div>
-							<div ng-if="day.number != 0" class="cell" ng-class="{selected: day.selected}" ng-click="pickDay(day)">{{day.number}}</div>
+							<div ng-if="day.number == 0" ng-class="{cell: true, empty:true}"></div>
+							<div ng-if="day.number != 0" ng-class="{cell: true, selected: day.selected}" ng-click="pickDay(day)">{{day.number}}</div>
 						</td>
 					</tr>
 				</table>
@@ -103,7 +103,7 @@ table#calender td {
 				<select ng-init="user.step = steps[0]" ng-options="s for s in steps" ng-model="user.step"></select>
 				<select ng-init="user.apartment = aApartments[0]" ng-options="a for a in aApartments" ng-if="user.step == 'A'" ng-model="user.apartment"></select>
 				<select ng-init="user.apartment = bApartments[0]" ng-options="b for b in bApartments" ng-if="user.step == 'B'" ng-model="user.apartment"></select>
-				<input type="submit" ng-click="update(user)" value="Save" />
+				<input type="submit" ng-click="saveReservation(user)" value="Save" />
 			</form>
 	
 		</div>
