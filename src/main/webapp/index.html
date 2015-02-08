@@ -77,19 +77,16 @@ h3 {
 
 		<div class="container">
 			<h1 ng-click="nextMonth()">Pyykkituvan varaus</h1>	
-<!-- 				<div class="wrapper"> -->
-<!-- 					<h2> -->
-<!-- 					{{date.dd}}.{{date.mm}}.{{date.yyyy}} -->
-<!-- 					</h2> -->
+			<h2>{{date.dd}}.{{date.mm}}.{{date.yyyy}} </h2> 
 <!-- 					<img ng-click="previousDate()" id="arrowleft" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png"/> -->
 <!-- 					<img ng-click="nextDate()"  id="arrowright" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowright.png"/> -->
-<!-- 				</div> -->
+
 			<div>
 				<table>
 					<tr ng-repeat="week in month">
 						<td ng-repeat="day in week">
 							<div ng-if="day.number == 0" class="empty cell"></div>
-							<div ng-if="day.number != 0" class="cell" ng-click="pickDay(day)">{{day.number}}</div>
+							<div ng-if="day.number != 0" class="cell" ng-class="{selected: day.selected}" ng-click="pickDay(day)">{{day.number}}</div>
 						</td>
 					</tr>
 				</table>

@@ -15,6 +15,7 @@ else {
 app.controller("MyController", function($scope, $http) {
 	// The selected date
 	$scope.d = new Date();
+
 	
 	// Apartment information. Need to re-check after getting actual information.
 	$scope.steps = ["A", "B"];
@@ -22,14 +23,14 @@ app.controller("MyController", function($scope, $http) {
 	$scope.bApartments = ["1", "2", "3", "4"];
 	
 	$scope.updateMonth = function() {
-		var date = $scope.d;
-		var m = date.getMonth() + 1;
-		var y = date.getFullYear();
+	
+		var m = $scope.d.getMonth() + 1;
+		var y = $scope.d.getFullYear();
 
 		var firstDayOfMonth = new Date(y, m - 1, 1, 1, 0, 0, 0);
 		
 		var weekDayOfFirstDay = firstDayOfMonth.getDay();
-		// Lets start days from monday
+		// Lets start days from Monday
 		weekDayOfFirstDay = (weekDayOfFirstDay + 6) % 7;
 		var daysInMonth;
 		// February
@@ -62,6 +63,7 @@ app.controller("MyController", function($scope, $http) {
 		}
 		var i = 1;
 		var weeks = [];
+		//TODO check the loop and select the current date! use $scope.d!!!
 		while (i < daysInMonth + 1) {
 			var week = [];
 			// init days to zero
@@ -70,6 +72,10 @@ app.controller("MyController", function($scope, $http) {
 			}
 			for (var j = weekDayOfFirstDay; j < 7 && i < daysInMonth + 1; j++) {
 				week[j] = {number: i, month : m, year : y};
+				if ($scope.d.getDate() == i) {
+					week[j]["selected"] = true;
+					$scope.selectedDay = week[j];
+				}
 				i++;
 			}
 			weekDayOfFirstDay = 0;
@@ -92,13 +98,17 @@ app.controller("MyController", function($scope, $http) {
 	$scope.nextMonth = function () {
 		var month = $scope.d.getMonth();
 		// Increase month by one
-		$scope.d = new Date( $scope.d.getFullYear(), month + 1, 1, 1, 0, 0, 0);
+		$scope.d = new Date(Date.UTC( $scope.d.getFullYear(), month + 1, 1, 1, 0, 0, 0));
 		$scope.updateMonth();
+		$scope.fetchData();
 
 	};
 	
 	$scope.pickDay = function(day) {
-		$scope.d = new Date(day.year, day.month - 1, day.number, 1, 0, 0, 0);
+		$scope.selectedDay.selected = false;
+		day.selected = true;
+		$scope.selectedDay = day;
+		$scope.d = new Date(Date.UTC(day.year, day.month - 1, day.number, 1, 0, 0, 0));
 		$scope.fetchData();
 	};
 	
