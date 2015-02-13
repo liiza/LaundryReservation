@@ -173,7 +173,7 @@ app.controller("MyController", function($scope, $http) {
 				reservation.reserved = true;
 				$http.put(app.url + reservation.id, reservation).success(function(data, status) {
 					if (status === 202) {
-						alert("Varaus epäonnistui.");
+						alert("Varaus ei onnistunut.");
 						$scope.fetchData();
 					}
 				});
