@@ -65,13 +65,28 @@ table#calender td {
 </head>
 
 <body ng-controller="MyController">
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'//www.google-analytics.com/analytics.js', 'ga');
 
+		ga('create', 'UA-59742793-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 	<div class="container">
 		<h1 ng-click="nextMonth()">Pyykkituvan varaus</h1>
 
 		<img ng-click="previousMonth()" id="arrowleft" class="arrow"
-			src="//www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png" /> <img
-			ng-click="nextMonth()" id="arrowright" class="arrow"
+			src="//www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png" />
+		<img ng-click="nextMonth()" id="arrowright" class="arrow"
 			src="//www.niksula.hut.fi/~lsailara/photos/images/arrowright.png" />
 		<h2>{{monthName}}</h2>
 		<div>
