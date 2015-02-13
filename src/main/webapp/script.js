@@ -172,7 +172,7 @@ app.controller("MyController", function($scope, $http) {
 				reservation.apartmentNumber = user.apartment;
 				reservation.reserved = true;
 				$http.put(app.url + reservation.id, reservation).success(function(data, status) {
-					if (status === "202") {
+					if (status === 202) {
 						alert("Varaus epäonnistui.");
 						$scope.fetchData();
 					}
