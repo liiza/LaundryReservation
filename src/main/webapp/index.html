@@ -12,18 +12,20 @@
 	margin: auto;
 	width: 75%;
 }
+
 h2 {
 	margin-top: 2px;
 	margin-bottom: 3px;
 }
+
 h3 {
 	margin-top: 10px;
 	margin-bottom: 3px;
 }
+
 .arrow {
 	width: 20px;
 	height: 20px;
-
 }
 
 .cell {
@@ -31,82 +33,91 @@ h3 {
 	height: 30px;
 	float: left;
 	padding: 1px;
-   
 }
+
 table#calender td {
 	border-style: solid;
 	border-width: 1px;
 	border-color: black;
 	padding: 0px;
 }
+
 .empty {
 	background-color: grey;
 }
 
-.reserved{
+.reserved {
 	background-color: red;
 }
+
 .free {
 	background-color: green;
 }
+
 .selected {
 	background-color: blue;
 }
 
 .hidden {
-	display:none;
+	display: none;
 }
 </style>
 </head>
 
 <body ng-controller="MyController">
 
-		<div class="container">
-			<h1 ng-click="nextMonth()">Pyykkituvan varaus</h1>	
+	<div class="container">
+		<h1 ng-click="nextMonth()">Pyykkituvan varaus</h1>
 
-			<img ng-click="previousMonth()" id="arrowleft" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png"/>
-			<img ng-click="nextMonth()" id="arrowright" class="arrow" src="http://www.niksula.hut.fi/~lsailara/photos/images/arrowright.png"/>
-			<h2>{{monthName}}</h2> 
-			<div>
-				<table id="calender">
-					<tr>
-						<th ng-repeat="weekday in weekDays">
-						{{weekday}}
-						</th>
-					</tr>
-					<tr ng-repeat="week in month">
-						<td ng-repeat="day in week">
-							<div ng-if="day.number == 0" ng-class="{cell: true, empty:true}"></div>
-							<div ng-if="day.number != 0" ng-class="{cell: true, selected: day.selected}" ng-click="pickDay(day)">{{day.number}}</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<h3>{{date.dd}}.{{date.mm}}.{{date.yyyy}}</h3>
-			<h3>Alkamisaika</h3>
-			<table id="times">
+		<img ng-click="previousMonth()" id="arrowleft" class="arrow"
+			src="//www.niksula.hut.fi/~lsailara/photos/images/arrowleft.png" /> <img
+			ng-click="nextMonth()" id="arrowright" class="arrow"
+			src="//www.niksula.hut.fi/~lsailara/photos/images/arrowright.png" />
+		<h2>{{monthName}}</h2>
+		<div>
+			<table id="calender">
 				<tr>
-					<th ng-repeat="r in data">
-					{{r.time}}
-					</th>
-				<tr>
-				<tr>
-					<td ng-repeat="r in data" ng-click="toggleReservation(r)">
-						<div ng-if="r.reserved == true" class="reserved cell">{{r.step}} {{r.apartmentNumber}}</div>	
-						<div ng-if="r.reserved == false" class="free cell"></div>	
-						<div ng-if="r.reserved == 'selected'" class="selected cell"></div>	
+					<th ng-repeat="weekday in weekDays">{{weekday}}</th>
+				</tr>
+				<tr ng-repeat="week in month">
+					<td ng-repeat="day in week">
+						<div ng-if="day.number == 0" ng-class="{cell: true, empty:true}"></div>
+						<div ng-if="day.number != 0"
+							ng-class="{cell: true, selected: day.selected}"
+							ng-click="pickDay(day)">{{day.number}}</div>
 					</td>
 				</tr>
 			</table>
-		
-			<form>
-				<select ng-init="user.step = steps[0]" ng-options="s for s in steps" ng-model="user.step"></select>
-				<select ng-init="user.apartment = aApartments[0]" ng-options="a for a in aApartments" ng-if="user.step == 'A'" ng-model="user.apartment"></select>
-				<select ng-init="user.apartment = bApartments[0]" ng-options="b for b in bApartments" ng-if="user.step == 'B'" ng-model="user.apartment"></select>
-				<input type="submit" ng-click="saveReservation(user)" value="Save" />
-			</form>
-	
 		</div>
-	
+		<h3>{{date.dd}}.{{date.mm}}.{{date.yyyy}}</h3>
+		<h3>Alkamisaika</h3>
+		<table id="times">
+			<tr>
+				<th ng-repeat="r in data">{{r.time}}</th>
+			<tr>
+			<tr>
+				<td ng-repeat="r in data" ng-click="toggleReservation(r)">
+					<div ng-if="r.reserved == true" class="reserved cell">{{r.step}}
+						{{r.apartmentNumber}}</div>
+					<div ng-if="r.reserved == false" class="free cell"></div>
+					<div ng-if="r.reserved == 'selected'" class="selected cell"></div>
+				</td>
+			</tr>
+		</table>
+
+		<form>
+			<select ng-init="user.step = steps[0]" ng-options="s for s in steps"
+				ng-model="user.step"></select> <select
+				ng-init="user.apartment = aApartments[0]"
+				ng-options="a for a in aApartments" ng-if="user.step == 'A'"
+				ng-model="user.apartment"></select> <select
+				ng-init="user.apartment = bApartments[0]"
+				ng-options="b for b in bApartments" ng-if="user.step == 'B'"
+				ng-model="user.apartment"></select> <input type="submit"
+				ng-click="saveReservation(user)" value="Save" />
+		</form>
+
+	</div>
+
 </body>
 </html>

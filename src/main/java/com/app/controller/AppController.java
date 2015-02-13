@@ -39,7 +39,11 @@ public class AppController {
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/{reservationId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<Void> reserve(@PathVariable long reservationId, @RequestBody LaundryReservation body) {
-		//TODO check that reservation is not reserved!
+		// Check that the reservation is not yet reserved.
+		LaundryReservation r = this.service.getReservation(reservationId);
+		if (r.isReserved()) {
+			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+		}
 		this.service.editReservation(body);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
